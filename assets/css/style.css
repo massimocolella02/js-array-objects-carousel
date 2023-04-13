@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Utility */
+.d-block{
+    display: block;
+}
+.d-none{
+    display: none;
+}
+
+.container{
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-circle-left,
+.fa-circle-right{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.item{
+    position: relative;
+}
+.item img{
+    width: 700px;
+    aspect-ratio: 4/3;
+    display: block;
+}
+.item .paragraph{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: whitesmoke;
+    text-align: right;
+}
