@@ -24,8 +24,6 @@ const images = [
 
 const first = images[0];
 const last = images[images.length - 1];
-const next = document.querySelector('fa-circle-right').addEventListener('click', next);
-const prev = document.querySelector('fa-circle-left').addEventListener('click', prev);
 
 //Ciclo che stampa le immagini nel DOM ma solo la prima attiva
 for(let i=0; i < images.length; i++){
@@ -61,4 +59,40 @@ for(let i=0; i < images.length; i++){
         `
     }
 }
-    
+
+
+//Next
+document.querySelector('.fa-circle-right').addEventListener('click', function(){
+    let imgAttiva = document.querySelector('#slider .item.d-block');
+    let imgDaAttivare = imgAttiva.nextElementSibling;
+
+    if( imgAttiva.classList.contains('last') ){
+        imgDaAttivare = document.querySelector('.first')
+    }
+
+    //Rimozione immagine precedente
+    imgAttiva.classList.remove('d-block');
+    imgAttiva.classList.add('d-none');
+
+    //Apparizione immagine successiva
+    imgDaAttivare.classList.remove('d-none');
+    imgDaAttivare.classList.add('d-block');
+})
+
+//Prev
+document.querySelector('.fa-circle-left').addEventListener('click', function(){
+    let imgAttiva = document.querySelector('#slider .item.d-block');
+    let imgDaAttivare = imgAttiva.previousElementSibling;
+
+    if( imgAttiva.classList.contains('first') ){
+        imgDaAttivare = document.querySelector('.last')
+    }
+
+    //Rimozione immagine precedente
+    imgAttiva.classList.remove('d-block');
+    imgAttiva.classList.add('d-none');
+
+    //Apparizione immagine successiva
+    imgDaAttivare.classList.remove('d-none');
+    imgDaAttivare.classList.add('d-block');
+})
