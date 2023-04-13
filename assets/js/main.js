@@ -96,3 +96,27 @@ document.querySelector('.fa-circle-left').addEventListener('click', function(){
     imgDaAttivare.classList.remove('d-none');
     imgDaAttivare.classList.add('d-block');
 })
+
+
+//thumbnails
+for(let i=0; i < images.length; i++){
+    document.querySelector('#thumbnails').innerHTML+=` 
+    <div class="thumbs">
+        <img class="thumb" src="./assets/${images[i].image}" alt="">
+    </div>`
+
+}
+
+const thumbs = document.querySelectorAll('.thumb');
+const slider = document.querySelector('.slider');
+
+thumbs.forEach(thumb => {
+    thumb.addEventListener('click', function(){
+        let imgAttiva = document.querySelector('#slider .item.d-block');
+
+        imgAttiva.classList.add("d-block")
+
+        document.querySelector('.item img').setAttribute("src", thumb.getAttribute("src"))
+    });
+});
+

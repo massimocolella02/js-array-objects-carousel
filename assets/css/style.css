@@ -40,3 +40,12 @@
     color: whitesmoke;
     text-align: right;
 }
+
+.thumbs{
+    height: calc(525px / 5);
+    cursor: pointer;
+}
+.thumbs img{
+    height: 100%;
+    aspect-ratio: 4/3;
+}
